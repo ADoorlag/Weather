@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap");
+
+/* Whole body */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: linear-gradient(rgba(0, 9, 117, 0.5), rgba(0, 9, 117, 0.5)),
+    url("./images/sky-background.jpg"), no-repeat center center fixed;
+  background-size: cover;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  color: #fff;
+}
+
+#weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Current section */
+#current {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+#city {
+  font-size: 2rem;
+}
+
+#primary-info {
+  display: flex;
+  justify-content: center;
+}
+
+#temp {
+  font-size: 6rem;
+}
+
+#temp span {
+  font-size: 2rem;
+}
+
+#secondary-info {
+  margin: 0.75rem;
+}
+
+#secondary-info h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#secondary-info p {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+#tertiary-info {
+  background: rgba(0, 0, 0, 0.05);
+  margin-top: 0.25rem;
+}
+
+#tertiary-info ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#tertiary-info ul li {
+  font-size: 1rem;
+  font-weight: 500;
+  list-style: none;
+  padding: 3px;
+}
