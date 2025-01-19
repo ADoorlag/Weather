@@ -68,19 +68,30 @@ body {
 #current {
   margin-top: 4rem;
   text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+  color: #fff;
 }
 
 #city {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 #primary-info {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 #temp {
-  font-size: 6rem;
+  font-size: 5rem;
 }
 
 #temp span {
@@ -88,32 +99,35 @@ body {
 }
 
 #secondary-info {
-  margin: 0.75rem;
+  margin-top: 1rem;
 }
 
 #secondary-info h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
 }
 
 #secondary-info p {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 400;
+  color: #ddd;
 }
 
 #tertiary-info {
-  background: rgba(0, 0, 0, 0.05);
-  margin-top: 0.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin-top: 1rem;
+  padding: 1rem;
 }
 
 #tertiary-info ul {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
 }
 
 #tertiary-info ul li {
   font-size: 1rem;
   font-weight: 500;
   list-style: none;
-  padding: 3px;
+  color: #eee;
 }
