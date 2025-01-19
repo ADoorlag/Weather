@@ -98,6 +98,27 @@ body {
   font-size: 2rem;
 }
 
+/* Temp-min-max */
+#temp-min-max {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+#temp-min-max h2 {
+  font-size: 1.25rem;
+  color: #f0f0f0;
+  margin: 0;
+}
+
+#temp-min-max span {
+  font-weight: bold;
+}
 #secondary-info {
   margin-top: 1rem;
 }
