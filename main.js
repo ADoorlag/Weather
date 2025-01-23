@@ -38,7 +38,7 @@ navigator.geolocation.getCurrentPosition(position => {
         description.textContent = data.weather[0].description
         lastUpdated.textContent = `Updated as of ${new Date(data.dt * 1000).toLocaleString()}`
         windSpeed.textContent = `${data.wind.speed} m/s`
-        visibility.textContent = `${data.visibility} meters`
+        visibility.textContent = `${(data.visibility/1000)} km`
         windGust.textContent = `${data.wind.gust} m/s`
         pressure.textContent = `${data.main.pressure} hPa`
         humidity.textContent = `${data.main.humidity}%`
@@ -46,4 +46,29 @@ navigator.geolocation.getCurrentPosition(position => {
         minTemp.innerHTML = Math.round(data.main.temp_min - 273.15) + "&#730<sup><span>F</span></sup>"
         maxTemp.innerHTML = Math.round(data.main.temp_max - 273.15) + "&#730<sup><span>F</span></sup>"
     })
+})
+
+// search for weather data for a specific city
+searchButton.addEventListener("click", () => {
+    const cityName = cityInput.value;
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}`)
+    .then(response => {return response.json()})
+    .then(data => {
+        //display weather data for searched city
+        city.textContent = data.name
+        temp.innerHTML = Math.round(data.main.temp - 273.15) + "&#730<sup><span>F</span></sup>"
+        icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+        description.textContent = data.weather[0].description
+        lastUpdated.textContent = `Updated as of ${new Date(data.dt * 1000).toLocaleString()}`
+        windSpeed.textContent = `${data.wind.speed} m/s`
+        visibility.textContent = `${(data.visibility/1000)} km`
+        windGust.textContent = `${data.wind.gust} m/s`
+        pressure.textContent = `${data.main.pressure} hPa`
+        humidity.textContent = `${data.main.humidity}%`
+        feelsLike.innerHTML = Math.round(data.main.feels_like - 273.15) + "&#730<sup><span>F</span></sup>"
+        minTemp.innerHTML = Math.round(data.main.temp_min - 273.15) + "&#730<sup><span>F</span></sup>"
+        maxTemp.innerHTML = Math.round(data.main.temp_max - 273.15) + "&#730<sup><span>F</span></sup>"
+    })
+
+    cityInput.value = ""
 })
