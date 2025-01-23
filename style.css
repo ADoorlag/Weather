@@ -83,6 +83,12 @@ body {
   margin-bottom: 1rem;
 }
 
+#icon {
+  max-width: 100px;
+  max-height: 100px;
+  filter: brightness(0) invert(1);
+}
+
 #primary-info {
   display: flex;
   justify-content: center;
@@ -119,6 +125,12 @@ body {
 #temp-min-max span {
   font-weight: bold;
 }
+
+#description {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 #secondary-info {
   margin-top: 1rem;
 }
@@ -137,7 +149,7 @@ body {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 #tertiary-info ul {
@@ -151,4 +163,5 @@ body {
   font-weight: 500;
   list-style: none;
   color: #eee;
+  margin: 0.25rem;
 }
