@@ -25,7 +25,7 @@ navigator.geolocation.getCurrentPosition(position => {
     .then(response => {return response.json()})
     .then (data => {
     city.textContent = data.name
-    temp.innerHTML = Math.round(data.main.temp - 273.15) + "&#730<sup><span>F</span></sup>"
+    temp.innerHTML = Math.round((data.main.temp)*1.8 - 459.67) + "&#730<sup><span>F</span></sup>"
     icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
     description.textContent = data.weather[0].description
     lastUpdated.textContent = `Updated as of ${new Date(data.dt * 1000).toLocaleString()}`
@@ -34,9 +34,9 @@ navigator.geolocation.getCurrentPosition(position => {
     windGust.textContent = `${data.wind.gust} m/s`
     pressure.textContent = `${data.main.pressure} hPa`
     humidity.textContent = `${data.main.humidity}%`
-    feelsLike.innerHTML = Math.round(data.main.feels_like - 273.15) + "&#730<sup><span>F</span></sup>"
-    minTemp.innerHTML = Math.round(data.main.temp_min - 273.15) + "&#730<sup><span>F</span></sup>"
-    maxTemp.innerHTML = Math.round(data.main.temp_max - 273.15) + "&#730<sup><span>F</span></sup>"
+    feelsLike.innerHTML = Math.round((data.main.feels_like)*1.8 - 459.67) + "&#730<sup><span>F</span></sup>"
+    minTemp.innerHTML = Math.round((data.main.temp_min)*1.8 - 459.67) + "&#730<sup><span>F</span></sup>"
+    maxTemp.innerHTML = Math.round((data.main.temp_max)*1.8 - 459.67) + "&#730<sup><span>F</span></sup>"
     })
 })
 
@@ -48,7 +48,7 @@ function searchWeather() {
     .then(data => {
         //display weather data for searched city
         city.textContent = data.name
-        temp.innerHTML = Math.round(data.main.temp - 273.15) + "&#730<sup><span>F</span></sup>"
+        temp.innerHTML = Math.round((data.main.temp)*1.8 - 459.67) + "&#730<sup><span>F</span></sup>"
         icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
         description.textContent = data.weather[0].description
         lastUpdated.textContent = `Updated as of ${new Date(data.dt * 1000).toLocaleString()}`
@@ -57,9 +57,9 @@ function searchWeather() {
         windGust.textContent = `${data.wind.gust} m/s`
         pressure.textContent = `${data.main.pressure} hPa`
         humidity.textContent = `${data.main.humidity}%`
-        feelsLike.innerHTML = Math.round(data.main.feels_like - 273.15) + "&#730<sup><span>F</span></sup>"
-        minTemp.innerHTML = Math.round(data.main.temp_min - 273.15) + "&#730<sup><span>F</span></sup>"
-        maxTemp.innerHTML = Math.round(data.main.temp_max - 273.15) + "&#730<sup><span>F</span></sup>"
+        feelsLike.innerHTML = Math.round((data.main.feels_like)*1.8 - 459.67) + "&#730<sup><span>F</span></sup>"
+        minTemp.innerHTML = Math.round((data.main.temp_min)*1.8 - 459.67) + "&#730<sup><span>F</span></sup>"
+        maxTemp.innerHTML = Math.round((data.main.temp_max)*1.8 - 459.67) + "&#730<sup><span>F</span></sup>"
     })
 
     cityInput.value = ""
